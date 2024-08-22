@@ -1,67 +1,87 @@
 <!DOCTYPE html>
-<head>
-    <title>
-        Agregar Donación
-    </title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../js/regiones_y_comunas.js"></script> 
-</head>
-<body>
-    <div>
+    <head>
+        <title>
+            Agregar Donación
+        </title>
+    </head>
+    <body>
         <div>
-            <b>Información de contacto</b>
+            <div>
+                <b>Información de contacto</b>
+            </div>
+            <br></br>
+            <div>
+                <label> Nombre donante</label>
+                <input id="nombreDonante" name="nombreDonante" type="text" required placeholder="Ingrese su nombre" size="80" minlength="3" maxlength="80">
+            </div>
+            
+            <div>
+                Email donante
+                <input id="emailDonante" name="emailDonante" type="email" required placeholder="Ingrese su correo" size="30" maxlength="30">
+            </div>
+            <div>
+                Número celular donante
+                <input id="numeroCelular" name="numeroCelular" type="number" placeholder="Ingrese su número" size="15" maxlength="15">
+            </div>
+            <div>
+                Región
+                <select id="regiones" required></select>
+            </div>
+            <div>
+                Comuna
+                <select id="comunas" required></select>
+            </div>
+            <br></br>
+            <div>
+                <b> Información del dispositivo</b>
+            </div>
+            <br></br>
+            <div>
+                Nombre dispositivo
+                <input id="nombreDispositivo" name="nombreDispositivo" type="text" required, placeholder="Ingrese el nombre del dispositivo" size="80" minlength="3" maxlength="80">
+            </div>
+            <div>
+                Descripción
+                <textarea id="descripcion" name="descripcion" rows="4" cols="50"> Escribe una descripción del producto </textarea>
+            </div>
+            <div>
+                Tipo
+                <select id="tipo" required"> 
+                    <option value="pantalla">Pantalla</option>
+                    <option value="notebook">Notebook</option>
+                    <option value="tablet">Tablet</option>
+                    <option value="celular">Celular</option>
+                    <option value="consola">Consola</option>
+                    <option value="mouse">Mouse</option>
+                    <option value="teclado">Teclado</option>
+                    <option value="impresora">Impresora</option>
+                    <option value="parlante">Parlante</option>
+                    <option value="audifonos">Audifonos</option>
+                </select>
+            </div>
+            <div>
+                Años de uso
+                <input id="tiempoUso" name="tiempoUso" type="text" required size="3" maxlength="2">
+            </div>
+            <div>
+                Estado funcionamiento
+                <select id="estadoFuncionamiento" required"> 
+                    <option value="funciona_perfecto">Funciona perfecto</option>
+                    <option value="funciona_medias">Funciona a medias</option>
+                    <option value="no_funciona">No funciona</option>
+                </select>
+            </div>
+            <div>
+                Fotos de productos
+                <input id="fotos" name="fotos[]" type="file" multiple required>
+            </div>
+            <div>
+                <button type="button" href="dummy">Agregar otro dispositivo a esta donación</button>
+            </div>
+            <div>
+                <button type="submit" value="submit">Publicar esta donación</button>
+            </div>
         </div>
-        <div>
-            Nombre donante
-            <input id="nombreDonante" name="nombreDonante" type="text" required>
-        </div>
-        <div>
-            Email donante
-            <input id="emailDonante" name="emailDonante" type="email" required>
-        </div>
-        <div>
-            Número celular donante
-            <input id="numeroCelular" name="numeroCelular" type="number" required>
-        </div>
-        <div>
-            Región
-            <select id="regiones"></select>
-        </div>
-        <div>
-            Comuna
-            <select id="comunas"></select>
-        </div>
-        <div>
-            <b> Información del dispositivo</b>
-        </div>
-        <div>
-            Nombre dispositivo
-            <input id="nombreDispositivo" name="nombreDispositivo" type="text" required>
-        </div>
-        <div>
-            Descripción
-            <input id="descripcion" name="descripcion" type="text" required>
-        </div>
-        <div>
-            Tipo
-            <input id="tipo" name="tipo" type="text" required>
-        </div>
-        <div>
-            Años de uso
-            <input id="tiempoUso" name="tiempoUso" type="text" required>
-        </div>
-        <div>
-            Estado funcionamiento
-            <input id="estadoFuncionamiento" name="estadoFuncionamiento" type="text" required>
-        </div>
-        <div>
-            Fotos de productos
-            <input id="fotosProducto" name="fotosProducto" type="file" required>
-        </div>
-        <div>
-            <button type="button" href="dummy">Agregar otro dispositivo a esta donación</button>
-        </div>
-        <div>
-            <button type="button" href="dummy">Publicar esta donación</button>
-        </div>
-    </div>
+        <script src="../js/regiones_y_comunas.js"></script> 
+    </body>
+</html>
