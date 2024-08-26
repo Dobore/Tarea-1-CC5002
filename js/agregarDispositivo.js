@@ -1,46 +1,17 @@
-<!DOCTYPE html>
-    <head>
-        <title>
-            Agregar Donación
-        </title>
-    </head>
-    <body>
-        <div id="containerDispositivos">
-            <div>
-                <h1>Agregar Dispositivo</h1>
-            </div>
-            <div>
-                <b>Información de contacto</b>
-            </div>
+let contadorDispositivos = 2; 
+
+function agregarDispositivo() {
+    // Obtener el contenedor donde se encuentran los dispositivos
+    const container = document.getElementById('containerDispositivos')
+
+    // Crear un nuevo div para contener el nuevo dispositivo
+    const newDevice = document.createElement('div');
+    
+    // Asignar al nuevo div el contenido del dispositivo original
+    newDevice.innerHTML = `
             <br></br>
             <div>
-                <label> Nombre donante</label>
-                <input id="nombreDonante" name="nombreDonante" type="text" required placeholder="Ingrese su nombre" size="80" minlength="3" maxlength="80">
-            </div>
-            
-            <div>
-                Email donante
-                <input id="emailDonante" name="emailDonante" type="email" required placeholder="Ingrese su correo" size="30" maxlength="30">
-            </div>
-            <div>
-                Número celular donante
-                <input id="numeroCelular" name="numeroCelular" type="number" placeholder="Ingrese su número" size="15" maxlength="15">
-            </div>
-            <div>
-                Región
-                <select id="regiones" required>
-                    <option value="" disabled selected>Seleccione una región</option>
-                </select>
-            </div>
-            <div>
-                Comuna
-                <select id="comunas" required>
-                    <option value="" disabled selected>Seleccione una comuna</option>
-                </select>
-            </div>
-            <br></br>
-            <div>
-                <b> Información del dispositivo (1)</b>
+                <b>Información del dispositivo (${contadorDispositivos})</b>
             </div>
             <br></br>
             <div>
@@ -85,17 +56,11 @@
                 Fotos de productos
                 <input id="fotos" name="fotos[]" type="file" multiple required>
             </div>
-        </div>
-        <div>
-            <div>
-                <button type="button" onclick="agregarDispositivo()">Agregar otro dispositivo a esta donación</button>
-            </div>
-            <div>
-                <button type="submit" value="submit">Publicar esta donación</button>
-            </div>
-        </div>
+    `;
 
-        <script src="../js/regiones_y_comunas.js"></script> 
-        <script src="../js/agregarDispositivo.js"></script>
-    </body>
-</html>
+    contadorDispositivos++;
+
+    // Agregar el nuevo div al final del contenedor
+    container.appendChild(newDevice);
+}
+   
