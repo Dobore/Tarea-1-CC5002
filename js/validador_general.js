@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", function() {
     formulario.addEventListener("submit", function(event) {
         let hayErrores = false;
 
-        // Limpiar mensajes de error anteriores
+        // Se limpian los mensajes de error anteriores
         document.querySelectorAll('.mensajeError').forEach(el => el.remove());
         document.getElementById('errorContainer').innerHTML = "";
 
-        // Validación de la información de contacto
+        // En primera instancia, solo se valida la información de contacto
         const errorMessages = [];
         const nombreDonante = document.getElementById("nombreDonante").value.trim();
         if (nombreDonante.length < 3) {
@@ -41,11 +41,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (errorMessages.length > 0) {
             document.getElementById('errorContainer').innerHTML = errorMessages.join('<br>');
-            event.preventDefault(); // Prevenir el envío del formulario
-            return; // Terminar la ejecución si hay errores
+            event.preventDefault(); 
+            return; 
         }
 
-        // Validación de dispositivos
+        // Luego, se realiza la validación de cada uno de los dispositivos
         let dispositivos = document.querySelectorAll('.informacionDispositivo');
         dispositivos.forEach((dispositivo, index) => {
             const errorContainer = document.createElement('div');
@@ -104,13 +104,15 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
+        //Si hay errores, estos se muestran en pantalla y no se envía el formulario
+
         if (hayErrores) {
-            event.preventDefault(); // Prevenir el envío del formulario
-            return; // Terminar la ejecución si hay errores
+            event.preventDefault(); 
+            return; 
         }
 
-        // Si no hay errores, mostrar mensaje de confirmación
-        event.preventDefault(); // Prevenir el envío del formulario
+        // Si no hay errores, se muestra el mensaje de confirmación
+        event.preventDefault();
         mostrarConfirmacion();
     });
 

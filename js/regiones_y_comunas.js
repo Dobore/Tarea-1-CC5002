@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const regionesSelect = document.getElementById('regiones');
     const comunasSelect = document.getElementById('comunas');
 
-    // Función para poblar el select de regiones
+    // Función que pobla el select de regiones
     function poblarRegiones() {
         regiones_y_comunas.regiones.forEach(region => {
             const opcion = document.createElement('option');
@@ -81,12 +81,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Función para poblar el select de comunas según la región seleccionada
+    // Función que pobla el select de comunas según la región seleccionada
     function poblarComunas(regionId) {
-        // Limpiar las opciones anteriores
+        // Se limpian las opciones anteriores
         comunasSelect.innerHTML = '';
 
-        // Encontrar la región seleccionada
+        // Se encuentra la región seleccionada
         const regionSeleccionada = regiones_y_comunas.regiones.find(region => region.id == regionId);
         
         if (regionSeleccionada) {
@@ -99,12 +99,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Event listener para cuando cambie la región seleccionada
     regionesSelect.addEventListener('change', function() {
         poblarComunas(this.value);
     });
 
-    // Poblar las regiones al cargar la página
     poblarRegiones();
 });
 

@@ -1,38 +1,20 @@
-let contadorDispositivos = 2; 
-document.addEventListener("DOMContentLoaded", () => {
-    const agregarDispositivoButton = document.getElementById("agregarDispositivo");
-    const containerDispositivos = document.getElementById("containerDispositivos");
+document.getElementById('agregarDispositivo').addEventListener('click', function() {
+    const containerDispositivos = document.getElementById('containerDispositivos');
+    const dispositivos = containerDispositivos.getElementsByClassName('informacionDispositivo');
+    const ultimoDispositivo = dispositivos[dispositivos.length - 1];
+    
+    // Se clona el último dispositivo
+    const nuevoDispositivo = ultimoDispositivo.cloneNode(true);
+    
+    // Se actualiza el número en el título, para poder diferenciar los dispositivos entre sí
+    const nuevoNumero = dispositivos.length + 1;
+    nuevoDispositivo.querySelector('h2 b').textContent = `Información del dispositivo (${nuevoNumero})`;
 
-    agregarDispositivoButton.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        // Crea un elemento <br> para separar los dispositivos
-        const saltoLinea = document.createElement('br');
-
-        // Clona el contenedor del dispositivo
-        const nuevoDispositivo = document.querySelector(".informacionDispositivo").cloneNode(true);
-
-        // Limpia los valores de los campos clonados y elimina los IDs duplicados
-        nuevoDispositivo.querySelectorAll('input, textarea').forEach(input => {
-            input.value = '';
-            input.removeAttribute('id');
-        });
-
-        // Actualiza el título del dispositivo para reflejar el nuevo número
-        const titulo = nuevoDispositivo.querySelector("div > b");
-        if (titulo) {
-            titulo.textContent = `Información del dispositivo (${contadorDispositivos})`;
-        }
-
-        // Incrementa el contador de dispositivos
-        contadorDispositivos++;
-
-        // Agrega el salto de línea y el nuevo dispositivo al contenedor
-        containerDispositivos.appendChild(saltoLinea);
-        containerDispositivos.appendChild(nuevoDispositivo);
-    });
+    // Se limpian los campos de texto y selección en el nuevo dispositivo clonado
+    nuevoDispositivo.querySelectorAll('input').forEach(input => input.value = '');
+    nuevoDispositivo.querySelectorAll('textarea').forEach(textarea => textarea.value = '');
+    nuevoDispositivo.querySelectorAll('select').forEach(select => select.selectedIndex = 0);
+    
+    // Finalmente, se agrega el nuevo dispositivo al contenedor
+    containerDispositivos.appendChild(nuevoDispositivo);
 });
-
-
-
-   

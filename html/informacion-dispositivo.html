@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Información del Dispositivo</title>
+    <link rel="stylesheet" href="../css/informacion_dipositivo_styles.css">
 </head>
 <body>
     <h1>Información del Dispositivo</h1>
 
     <div>
         <h2>Información de Contacto</h2>
-        <p>Nombre del Donante: Juan Pérez González</p>
-        <p>Email del Donante: jperez@gmail.com</p>
-        <p>Número Celular del Donante: +56912345678</p>
+        <p>Nombre del donante: Juan Pérez González</p>
+        <p>Email del donante: jperez@gmail.com</p>
+        <p>Número celular del donante: +56922345678</p>
         <p>Región: Santiago</p>
         <p>Comuna: Santiago Centro</p>
     </div>
 
     <div>
-        <h2>Información del Dispositivo</h2>
-        <p>Nombre del Dispositivo: Monitor Samsung</p>
+        <h2>Información del dispositivo</h2>
+        <p>Nombre del dispositivo: Monitor Starsung</p>
         <p>Descripción: Monitor LCD en excelente estado.</p>
         <p>Tipo: Pantalla</p>
-        <p>Años de Uso: 2</p>
+        <p>Años de uso: 2</p>
         <p>Estado: Funciona perfecto</p>
 
         <div>
@@ -33,14 +34,14 @@
             <h3>Comentarios</h3>
             <div id="comentarios">
                 <div>
-                    <p><strong>Fecha:</strong> 2024-09-01</p>
-                    <p><strong>Nombre:</strong> María González</p>
-                    <p><strong>Comentario:</strong> El monitor está en excelente estado. Muy recomendable.</p>
+                    <p><strong>Fecha:</strong> 2024-09-03</p>
+                    <p><strong>Nombre:</strong> Jane Doe</p>
+                    <p><strong>Comentario:</strong> El monitor se ve en un muy buen estado. Es posible contactarme contigo?</p>
                 </div>
                 <div>
-                    <p><strong>Fecha:</strong> 2024-09-02</p>
-                    <p><strong>Nombre:</strong> Carlos Fernández</p>
-                    <p><strong>Comentario:</strong> Funciona bien, pero el precio es un poco alto.</p>
+                    <p><strong>Fecha:</strong> 2024-09-03</p>
+                    <p><strong>Nombre:</strong> Daniel Torres</p>
+                    <p><strong>Comentario:</strong> La imagen parece generada por una IA :/</p>
                 </div>
             </div>
 
@@ -62,16 +63,6 @@
     <button onclick="window.location.href='index.html';">Volver al inicio</button>
 
     <script src="../js/validar_comentario.js"></script>
-    <script>
-        function toggleImageSize(img) {
-            if (img.style.width === '640px') {
-                img.style.width = '1280px';
-                img.style.height = '1024px';
-            } else {
-                img.style.width = '640px';
-                img.style.height = '480px';
-            }
-        }
-    </script>
+    <script src="../js/cambiarTamannoImagen.js"></script>
 </body>
 </html>
