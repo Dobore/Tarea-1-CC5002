@@ -122,16 +122,15 @@ document.addEventListener("DOMContentLoaded", function() {
             <button id="confirmarEnvio">Sí, confirmo</button>
             <button id="volverFormulario">No, quiero volver al formulario</button>
         `;
-        formulario.parentNode.appendChild(mensajeConfirmacion);
+        formulario.appendChild(mensajeConfirmacion);
 
         document.getElementById('confirmarEnvio').addEventListener('click', function() {
             mensajeConfirmacion.remove();
             const mensajeExito = document.createElement('div');
             mensajeExito.innerHTML = `
                 <p>Hemos recibido la información de su donación. Muchas gracias.</p>
-                <a href="index.html"><button>Volver a la portada</button></a>
             `;
-            formulario.parentNode.appendChild(mensajeExito);
+            formulario.appendChild(mensajeExito);
         });
 
         document.getElementById('volverFormulario').addEventListener('click', function() {
