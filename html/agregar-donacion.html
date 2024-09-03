@@ -1,101 +1,109 @@
 <!DOCTYPE html>
     <head>
+        <meta charset="UTF-8">
         <title>
             Agregar Donación
         </title>
     </head>
     <body>
-        <div id="containerDispositivos">
-            <div>
-                <h1>Agregar Dispositivo</h1>
+        <form>
+            <div id="containerInformacion">
+                <div>
+                    <h1>Agregar Dispositivo</h1>
+                </div>
+                <div>
+                    <b>Información de contacto</b>
+                </div>
+                <br></br>
+                <div>
+                    <label> Nombre donante</label>
+                    <input id="nombreDonante" name="nombreDonante" type="text" placeholder="Juan Pérez González" size="80">
+                </div>
+                
+                <div>
+                    Email donante
+                    <input id="emailDonante" name="emailDonante" type="email" placeholder="jperez@gmail.com" >
+                </div>
+                <div>
+                    Número celular donante
+                    <input id="numeroCelular" name="numeroCelular" type="text" placeholder="+56912345678">
+                </div>
+                <div>
+                    Región
+                    <select id="regiones">
+                        <option value="" disabled selected>Seleccione una región</option>
+                    </select>
+                </div>
+                <div>
+                    Comuna
+                    <select id="comunas">
+                        <option value="" disabled selected>Seleccione una comuna</option>
+                    </select>
+                </div>
+                <div id="errorContainer" style="color: red; margin-top: 10px;"></div>
+                <div id="containerDispositivos">
+                    <div class="informacionDispositivo">
+                        <div>
+                            <b> Información del dispositivo (1)</b>
+                        </div>
+                        <br></br>
+                        <div>
+                            Nombre del dispositivo
+                            <input id="nombreDispositivo" name="nombreDispositivo" type="text" placeholder="Ingrese el nombre del dispositivo" size="80">
+                        </div>
+                        <div>
+                            Descripción
+                            <textarea id="descripcion" name="descripcion" rows="4" cols="50" placeholder="Escribe una descripción del producto"></textarea>
+                        </div>
+                        
+                        <div>
+                            Tipo
+                            <select name="tipo"> 
+                                <option value="" disabled selected>Seleccione un tipo de dispositivo</option>
+                                <option value="pantalla">Pantalla</option>
+                                <option value="notebook">Notebook</option>
+                                <option value="tablet">Tablet</option>
+                                <option value="celular">Celular</option>
+                                <option value="consola">Consola</option>
+                                <option value="mouse">Mouse</option>
+                                <option value="teclado">Teclado</option>
+                                <option value="impresora">Impresora</option>
+                                <option value="parlante">Parlante</option>
+                                <option value="audifonos">Audifonos</option>
+                            </select>
+                        </div>
+                        <div>
+                            Años de uso
+                            <input id="tiempoUso" name="tiempoUso" type="text">
+                        </div>
+                        <div>
+                            Estado funcionamiento
+                            <select name="estadoFuncionamiento"> 
+                                <option value="" disabled selected>Seleccione el estado del dispositivo</option>
+                                <option value="funciona_perfecto">Funciona perfecto</option>
+                                <option value="funciona_medias">Funciona a medias</option>
+                                <option value="no_funciona">No funciona</option>
+                            </select>
+                        </div>
+                        <div>
+                            Fotos de productos
+                            <input id="fotos" name="fotos[]" type="file" multiple>
+                        </div>
+                    </div>
+                </div>             
             </div>
             <div>
-                <b>Información de contacto</b>
+                <div>
+                    <button id="agregarDispositivo" type="button">Agregar otro dispositivo a esta donación</button>
+                </div>
+                <div>
+                    <button type="submit" value="submit">Publicar esta donación</button>
+                </div>
             </div>
-            <br></br>
-            <div>
-                <label> Nombre donante</label>
-                <input id="nombreDonante" name="nombreDonante" type="text" required placeholder="Ingrese su nombre" size="80" minlength="3" maxlength="80">
-            </div>
-            
-            <div>
-                Email donante
-                <input id="emailDonante" name="emailDonante" type="email" required placeholder="Ingrese su correo" size="30" maxlength="30">
-            </div>
-            <div>
-                Número celular donante
-                <input id="numeroCelular" name="numeroCelular" type="number" placeholder="Ingrese su número" size="15" maxlength="15">
-            </div>
-            <div>
-                Región
-                <select id="regiones" required>
-                    <option value="" disabled selected>Seleccione una región</option>
-                </select>
-            </div>
-            <div>
-                Comuna
-                <select id="comunas" required>
-                    <option value="" disabled selected>Seleccione una comuna</option>
-                </select>
-            </div>
-            <br></br>
-            <div>
-                <b> Información del dispositivo (1)</b>
-            </div>
-            <br></br>
-            <div>
-                Nombre del dispositivo
-                <input id="nombreDispositivo" name="nombreDispositivo" type="text" required, placeholder="Ingrese el nombre del dispositivo" size="80" minlength="3" maxlength="80">
-            </div>
-            <div>
-                Descripción
-                <textarea id="descripcion" name="descripcion" rows="4" cols="50" placeholder="Escribe una descripción del producto"></textarea>
-            </div>
-            
-            <div>
-                Tipo
-                <select id="tipo" required"> 
-                    <option value="" disabled selected>Seleccione un tipo de dispositivo</option>
-                    <option value="pantalla">Pantalla</option>
-                    <option value="notebook">Notebook</option>
-                    <option value="tablet">Tablet</option>
-                    <option value="celular">Celular</option>
-                    <option value="consola">Consola</option>
-                    <option value="mouse">Mouse</option>
-                    <option value="teclado">Teclado</option>
-                    <option value="impresora">Impresora</option>
-                    <option value="parlante">Parlante</option>
-                    <option value="audifonos">Audifonos</option>
-                </select>
-            </div>
-            <div>
-                Años de uso
-                <input id="tiempoUso" name="tiempoUso" type="text" required size="3" maxlength="2">
-            </div>
-            <div>
-                Estado funcionamiento
-                <select id="estadoFuncionamiento" required"> 
-                    <option value="" disabled selected>Seleccione el estado del dispositivo</option>
-                    <option value="funciona_perfecto">Funciona perfecto</option>
-                    <option value="funciona_medias">Funciona a medias</option>
-                    <option value="no_funciona">No funciona</option>
-                </select>
-            </div>
-            <div>
-                Fotos de productos
-                <input id="fotos" name="fotos[]" type="file" multiple required>
-            </div>
-        </div>
-        <div>
-            <div>
-                <button type="button" onclick="agregarDispositivo()">Agregar otro dispositivo a esta donación</button>
-            </div>
-            <div>
-                <button type="submit" value="submit">Publicar esta donación</button>
-            </div>
-        </div>
+        </form>
 
         <script src="../js/regiones_y_comunas.js"></script> 
         <script src="../js/agregarDispositivo.js"></script>
+        <script src="../js/validador_general.js"></script>
     </body>
 </html>

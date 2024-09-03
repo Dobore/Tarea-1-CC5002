@@ -1,7 +1,76 @@
 <!DOCTYPE html>
+<html lang="es">
 <head>
-    <title> Goober </title>
+    <meta charset="UTF-8">
+    <title>Información del Dispositivo</title>
 </head>
 <body>
-    goober2
+    <h1>Información del Dispositivo</h1>
+
+    <div>
+        <h2>Información de Contacto</h2>
+        <p>Nombre del Donante: Juan Pérez González</p>
+        <p>Email del Donante: jperez@gmail.com</p>
+        <p>Número Celular del Donante: +56912345678</p>
+        <p>Región: Santiago</p>
+        <p>Comuna: Santiago Centro</p>
+    </div>
+
+    <div>
+        <h2>Información del Dispositivo</h2>
+        <p>Tipo: Pantalla</p>
+        <p>Nombre del Dispositivo: Monitor Samsung</p>
+        <p>Estado: Funciona perfecto</p>
+        <p>Descripción: Monitor LCD en excelente estado.</p>
+        <p>Años de Uso: 2</p>
+
+        <div>
+            <h3>Fotos del Dispositivo</h3>
+            <img src="../resources/monitor.jpg" alt="Foto del dispositivo" width="640" height="480" onclick="toggleImageSize(this);">
+        </div>
+
+        <div>
+            <h3>Comentarios</h3>
+            <div id="comentarios">
+                <div>
+                    <p><strong>Fecha:</strong> 2024-09-01</p>
+                    <p><strong>Nombre:</strong> María González</p>
+                    <p><strong>Comentario:</strong> El monitor está en excelente estado. Muy recomendable.</p>
+                </div>
+                <div>
+                    <p><strong>Fecha:</strong> 2024-09-02</p>
+                    <p><strong>Nombre:</strong> Carlos Fernández</p>
+                    <p><strong>Comentario:</strong> Funciona bien, pero el precio es un poco alto.</p>
+                </div>
+            </div>
+
+            <h3>Agregar Comentario</h3>
+            <form id="comentarioForm">
+                <div>
+                    <label for="nombreComentario">Nombre:</label>
+                    <input id="nombreComentario" name="nombreComentario" type="text" placeholder="Tu nombre">
+                </div>
+                <div>
+                    <label for="textoComentario">Comentario:</label>
+                    <textarea id="textoComentario" name="textoComentario" rows="4" cols="50" placeholder="Tu comentario"></textarea>
+                </div>
+                <button type="button" onclick="agregarComentario()">Agregar comentario</button>
+            </form>
+            <div id="mensaje" style="color: red; margin-top: 10px;"></div>
+        </div>
+    </div>
+
+    <script src="../js/validar_comentario.js"></script>
+    <script>
+        function toggleImageSize(img) {
+            if (img.style.width === '640px') {
+                img.style.width = '1280px';
+                img.style.height = '1024px';
+            } else {
+                img.style.width = '640px';
+                img.style.height = '480px';
+            }
+        }
+    </script>
 </body>
+</html>
